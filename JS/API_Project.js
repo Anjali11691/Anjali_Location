@@ -5,7 +5,7 @@ var domready = function(){
        
         for(var i=0; i<data.results.length; i++){
             var _result = data.results[i];
-            $('#food ul').append('<li>'+ _result.name + '</li>')
+            $('#food ul').append('<li>'+ _result.name + '</li>');
         }
     });
 };
