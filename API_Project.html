@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>API Project</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="CSS/API_Project.css">
-</head>
-
-<body>
-
-    <h1 id="title">There are:</h1>
+    <head>
+        <title>Junkgo</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="IMAGES/logo.png"/>
+        <link href="CSS/API_Project.css" rel="stylesheet" type="text/css">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="index">     
+            <p id="bigTitle">Junkgo</p>
+                <center>
+                    <div>
+                        <p id="button">Cliquez-ici</p>
+                    </div>
+                </center>
+        </div> 
     
+      
+  <div id="accueil">    
+      <div id="header">
+   
+   
+        <p id="title">Junkgo</p>
+   
+      </div>
+      <div id="contener">
+
+
+           <div id="food">
+               <ul>
+
+
+               </ul>
+           </div>
+      </div>
     
-    <div id="food">
-        <ul>
+      
+      
+    <div id="map"></div>
+    <script>
+    var map;
+    function init() {
+        // activate the map on the div#map and center id by default on a static lat/lng
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.8, lng: 2.35},
+            zoom: 15
+        });
         
-       </ul>
-    </div>
-    
-<script src="JS/API_Project.js"></script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
 
-</body>
-
+                map.setCenter(pos);
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    title: 'Webstart !'
+                });
+            }, function() {
+                // error can't get the location
+                console.error('error can\'t get the location');
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            console.error('your browser doesn\'t support Geolocation');
+        }
+    }
+        
+    $(document).ready(init);
+    </script>
+        </div>
+      <script src="JS/API_Project.js"></script>
+  </body>
 </html>

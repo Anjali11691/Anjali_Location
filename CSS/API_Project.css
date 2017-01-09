@@ -1,11 +1,78 @@
-html {
+* {
     
-    font-family: avenir; 
+    margin: 0;
+    padding: 0;
     
+}
+
+@font-face {
+    font-family: "HamburgerHeavenNF";
+    src: url('HamburgerHeavenNF.ttf');
+}
+
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0; 
+        font-family: avenir;
+      }
+
+#index {
+    
+    background-image: url("../IMAGES/burger.jpg");
+    background-size: 100% ;
+    background-position: center center;
+    height: 800px;
+}
+
+#accueil {
+    
+    height: 1000px;
 }
 
 #title {
     
     text-align: center;
+    font-size: 80px;
+    font-family: HamburgerHeavenNF;
+    color: aliceblue;
     
+}
+
+
+
+#bigTitle {
+
+    text-align: center;
+    font-size: 120px;
+    font-family: HamburgerHeavenNF;
+    color: aliceblue;
+    padding-top: 200px;
+}
+
+#header {
+    
+    background-color: #dc9246;
+    height: 100px;
+}
+
+#map {
+        height: 50%;
+        width: 50%;
+        margin-left: 25%;
+      }
+
+#button {
+    color: aliceblue;
+    border-radius: 30px;
+    border: solid white 2px;
+    width: 100px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px 20px;
+}
+
+#button:hover {
+    color: #dc9246;
+    background-color: aliceblue;
 }
