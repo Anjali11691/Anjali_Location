@@ -1,8 +1,6 @@
 * {
-    
     margin: 0;
     padding: 0;
-    
 }
 
 @font-face {
@@ -15,14 +13,13 @@ html, body {
         margin: 0;
         padding: 0; 
         font-family: avenir;
-      }
+    }
 
 #index {
-    
-    background-image: url("../IMAGES/burger.jpg");
-    background-size: 100% ;
+    background: url("../IMAGES/background.jpg") no-repeat;
+    background-size: 100% 100%;
     background-position: center center;
-    height: 800px;
+    height: 710px;
 }
 
 #accueil {
@@ -31,18 +28,15 @@ html, body {
 }
 
 #title {
-    
     text-align: center;
     font-size: 80px;
     font-family: HamburgerHeavenNF;
     color: aliceblue;
-    
 }
 
 
 
 #bigTitle {
-
     text-align: center;
     font-size: 120px;
     font-family: HamburgerHeavenNF;
@@ -51,7 +45,6 @@ html, body {
 }
 
 #header {
-    
     background-color: #dc9246;
     height: 100px;
 }
