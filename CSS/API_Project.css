@@ -20,6 +20,7 @@ html, body {
     background-size: 100% 100%;
     background-position: center center;
     height: 650px;
+    z-index: 10;
 }
 
 #firstblock #header h1 {
@@ -51,11 +52,23 @@ html, body {
     background-color: aliceblue;
 }
 
-#download {
-    
-    margin-left: 500px;
-    margin-top: 400px;
-    position: absolute
+#firstblock #download { 
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#firstblock #download img:first-child {
+    width: 218px;
+    margin-right :20px;
+    height: 4.3em;
+}
+
+#firstblock #download img:last-child {
+    height: 67px; 
+    width: 211px;
+    padding: -8px;
 }
 
 #secondblock {
@@ -63,36 +76,35 @@ html, body {
     height: 50em;
 }
 
-#topMap {
-    
-    width: 100%;
-    height: 150px;
+#secondblock #topMap {
+    height: 227px;
     background-color: orange;
-    -webkit-transform : skewY(-2deg);
+    -webkit-transform : skewY(-5deg);
     z-index: 10;
-    margin-top: -40px;
-    position: absolute
+    position: absolute;
+    width: 100%;
+    top: -4em;
 }
 
-#botMap {
-    
+#secondblock #botMap {
     width: 100%;
-    height: 150px;
+    height: 227px;
     background-color: orange;
     z-index: 10;
-    margin-top: 760px;
     position: absolute;
+    top: 911.5px;
+    -webkit-transform: skewY(-5deg);
 }
 
 
 #secondblock #map {
-    transform: translate(-50%, -50%);
-    height: 90%;       
+    z-index: 8;
+    transform: translate(-50%, -50%);       
+    height: 110%;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 67%;
     left: 50%;
-    z-index: 8;
 }
 
 #secondblock #results {
