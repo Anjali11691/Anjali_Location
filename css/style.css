@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "HamburgerHeavenNF";
-    src: url('HamburgerHeavenNF.ttf');
+    src: url('../font/HamburgerHeavenNF.ttf');
 }
 
 html, body {
@@ -77,7 +77,7 @@ html, body {
 }
 
 #secondblock #topMap {
-    height: 25em;;
+    height: 29em;;
     background-color: lightblue;
     -webkit-transform : skewY(-5deg);
     z-index: 10;
@@ -92,7 +92,7 @@ html, body {
     background-color: lightblue;
     z-index: 10;
     position: absolute;
-    top: 72em;
+    top: 76em;
 }
 
 #secondblock #map {
@@ -101,7 +101,7 @@ html, body {
     height: 110%;
     width: 100%;
     position: absolute;
-    top: 89%;
+    top: 97%;
     left: 50%;
 }
 

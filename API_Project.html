@@ -4,9 +4,11 @@
         <title>Junkgo</title>
         <meta name="viewport" content="initial-scale=1.0">
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="IMAGES/logo.png"/>
-        <link href="CSS/API_Project.css" rel="stylesheet" type="text/css">
-        <link href="CSS/load.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="images/logo.png"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/load.css" rel="stylesheet" type="text/css">
+        <link href="css/swiper.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/swiper.min.css">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
@@ -23,7 +25,36 @@
 	    </div>
       	
 		<div id="secondblock">
-            <div id="topMap"></div>
+            <div id="topMap">
+            	 
+            	 <!-- SWIPER -->
+				<div id="swiper">
+		            <div class="swiper-container swiper-container-horizontal- swiper-container-free-mode">
+		                <div class="swiper-wrapper">
+		                    <div class="swiper-slide"><img src="images/macdo.png"></div>
+		                    <div class="swiper-slide"><img src="images/burgerk.png"></div>
+		                    <div class="swiper-slide"><img src="images/subway.png"></div> 
+		                </div>
+		            </div>  
+
+		            <script src="js/swiper.min.js"></script>
+
+		            <script> 
+		                var swiper = new Swiper('.swiper-container', {
+		                    pagination: '.swiper-pagination',
+		                    slidesPerView: 4,
+		                    paginationClickable: true,
+		                    spaceBetween: 5,
+		                    freeMode: true,
+		                    loop: true,
+		                    keyboardControl: true,
+		                });
+		            </script>
+		        </div>
+            </div>
+
+            <!-- END SWIPER -->
+
 			<div id="map">   
 				<script>
 					    var map;
