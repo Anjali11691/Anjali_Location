@@ -13,11 +13,10 @@
     	<div id="firstblock">
 	        <div id="header">     
 	            <h1>Junkgo</h1>
-	                <center>
-	                    <div>
-	                        <p id="button">Cliquez-ici</p>
-	                    </div>
-	                </center>
+                <div id="download">
+                    <img width="200px" style="margin-right:20px" src="IMAGES/app_store.png">
+                    <img height="70px" width="200px" src="IMAGES/googlePlay.png">
+                </div>
 	        </div> 
 	    </div>
       	
@@ -27,16 +26,17 @@
 					
 				</ul>
 			</div>
-
-			<div id="map" class="circlemap">
-				    
+            <div id="topMap"></div>
+			<div id="map">   
 				<script>
 					    var map;
 					    function init() {
 					        // activate the map on the div#map and center id by default on a static lat/lng
 					        map = new google.maps.Map(document.getElementById('map'), {
 					            center: {lat: 48.8, lng: 2.35},
-					            zoom: 15
+					            zoom: 15 ,
+                                styles : style,
+                                scrollwheel: false,
 					        });
 					        
 					        if (navigator.geolocation) {
@@ -61,14 +61,17 @@
 					            console.error('your browser doesn\'t support Geolocation');
 					        }
 					    }
+                    
 					        
 					    $(document).ready(init);
 			    </script>
-
-
 	        </div>
-	    </div>
+            <div id="botMap"></div>
+        </div>
 
+        
+        
+        
 	    <div id="thirdblock">
 	    	
 	    </div>
