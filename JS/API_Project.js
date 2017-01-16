@@ -172,5 +172,12 @@ var domready = function(){
     });
 };
 
+var hideload = function(){
+    
+    $("#load").fadeOut()
+}
+
+setTimeout(hideload, 3500);
+
 $(document).ready(domready);
 
