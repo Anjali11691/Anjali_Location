@@ -77,7 +77,7 @@ html, body {
 }
 
 #secondblock #topMap {
-    height: 29em;;
+    height: 19.1em;;
     background-color: lightblue;
     -webkit-transform : skewY(-5deg);
     z-index: 10;
@@ -92,7 +92,7 @@ html, body {
     background-color: lightblue;
     z-index: 10;
     position: absolute;
-    top: 76em;
+    top: 66em;
 }
 
 #secondblock #map {
@@ -101,7 +101,7 @@ html, body {
     height: 110%;
     width: 100%;
     position: absolute;
-    top: 97%;
+    top: 77%;
     left: 50%;
 }
 
