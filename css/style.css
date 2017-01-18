@@ -17,7 +17,7 @@ html, body {
 #firstblock #header {
     position: relative;
     background: url("../IMAGES/background.jpg") no-repeat;
-    background-size: 100% 130%;
+    background-size: 100% 150%;
     background-position: center center;
     height: 650px;
     z-index: 10;
