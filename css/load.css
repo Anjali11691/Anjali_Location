@@ -8,47 +8,46 @@
     top: 0;
 }
 
-.absolute {
-    
-    position: absolute;
-    margin-left: 550px;
-    opacity: 0;
-}
-
-#painT {
+#load #painT {
     
     margin-top: 200px;
     -webkit-animation: painT 1s 2.5s ease-out forwards;
 }
 
-#salade {
+#load #salade {
     
     margin-top: 295px;
     -webkit-animation: salade 1s 2s ease-out forwards;
 }
 
-#tomate {
+#load #tomate {
     
     margin-top: 345px;
     -webkit-animation: tomate 1s 1.5s ease-out forwards;
 }
 
-#steak {
+#load #steak {
     
     margin-top: 380px;
     -webkit-animation: steak 1s 1s ease-out forwards;
 }
 
-#fromage {
+#load #fromage {
     margin-top: 178px;
     -webkit-animation: fromage 1s 0.5s ease-out forwards;
 }
 
-#painB {
+#load #painB {
     margin-top: 455px;
     -webkit-animation: painB 1s 0s ease-out forwards;
 }
 
+#load .absolute {
+    
+    position: absolute;
+    margin-left: 550px;
+    opacity: 0;
+}
 
 @-webkit-keyframes painB{
     0% { margin-top: -100px;opacity: 0;}

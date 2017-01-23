@@ -17,123 +17,149 @@
         <script src="JS/API_Project.js"></script>
     </head>
     <body>
-        
-    	<div id="firstblock">
-	        <div id="header">     
-	            <img id="logo" width="550px" src="images/logo.png"/>
-                <div id="download">
-                    <img src="IMAGES/app_store.png">
-                    <img src="IMAGES/googlePlay.png">
-                </div>
-	        </div> 
-	    </div>
-      	
-		<div id="secondblock">
-            <div id="topMap">
-            	 
-            	 <!-- SWIPER -->
-				<div id="swiper">
-		            <div class="swiper-container swiper-container-horizontal- swiper-container-free-mode">
-		                <div class="swiper-wrapper">
-		                    <div class="swiper-slide"><img src="images/macdo.png"></div>
-		                    <div class="swiper-slide"><img src="images/burgerk.png"></div>
-		                    <div class="swiper-slide"><img src="images/subway.png"></div> 
-		                    <div class="swiper-slide"><img src="images/kfc.png"></div>
-		                    <div class="swiper-slide"><img src="images/otacos.png"></div>
-		                    <div class="swiper-slide"><img src="images/quick.png"></div>
-		                </div>
-		            </div>  
 
-		            <script src="js/swiper.min.js"></script>
+		<section>
 
-		            <script> 
-		                var swiper = new Swiper('.swiper-container', {
-		                    pagination: '.swiper-pagination',
-		                    slidesPerView: 4,
-		                    paginationClickable: true,
-		                    spaceBetween: 5,
-		                    freeMode: true,
-		                    loop: true,
-		                    keyboardControl: true,
-		                });
-		            </script>
-		        </div>
-            </div>
-
-            <!-- END SWIPER -->
-
-			<div id="map">   
-				<script>
-					    var map;
-					    function init() {
-					        // activate the map on the div#map and center id by default on a static lat/lng
-					        map = new google.maps.Map(document.getElementById('map'), {
-					            center: {lat: 48.8, lng: 2.35},
-					            zoom: 15 ,
-                                styles : style,
-                                scrollwheel: false,
-					        });
-					        
-					        if (navigator.geolocation) {
-					            navigator.geolocation.getCurrentPosition(function(position) {
-					                var pos = {
-					                    lat: position.coords.latitude,
-					                    lng: position.coords.longitude
-					                };
-                                    
-                                    getshops(position.coords.latitude,position.coords.longitude);
-
-					                map.setCenter(pos);
-					                var marker = new google.maps.Marker({
-					                    position: pos,
-					                    map: map,
-					                    title: 'Webstart !'
-					                });
-					            }, function() {
-					                // error can't get the location
-					                console.error('error can\'t get the location');
-					            });
-					        } else {
-					            // Browser doesn't support Geolocation
-					            console.error('your browser doesn\'t support Geolocation');
-					        }
-					    }
-                    
-					        
-					    $(document).ready(init);
-			    </script>
+        	<!-- LOADING HAMBURGER -->
+        	
+	        <div id="load">
+	            <img id="painB" class="absolute" width="300px" src="images/painbot.png">
+	            <img id="fromage" class="absolute" width="386px" style="margin-left:506px" src="IMAGES/fromage.png">
+	            <img id="steak" class="absolute" width="300px" src="images/steak.png">
+	            <img id="tomate" class="absolute" width="300px" src="images/tomate.png">
+	            <img id="salade" class="absolute" width="300px" src="images/salade.png">
+	            <img id="painT" class="absolute" width="300px" src="images/paintop.png">
 	        </div>
-           
+        </section>
+
+	    <section>
+
+	    		<!-- FIRSTBLOCK HEADER -->
+
+	    	<div id="firstblock">
+		        <div id="header">     
+		            <img id="logo" width="550px" src="images/logo.png"/>
+	                <div id="download">
+	                    <img src="IMAGES/app_store.png">
+	                    <img src="IMAGES/googlePlay.png">
+	                </div>
+		        </div> 
+		    </div>
+		</section>
+      	
+      	<section>
+
+      			<!-- SECONDBLOCK SWIPER -->
+
+			<div id="secondblock">
+	            <div id="topMap">
+	            	 
+	            	 <!-- SWIPER -->
+
+					<div id="swiper">
+			            <div class="swiper-container swiper-container-horizontal- swiper-container-free-mode">
+			                <div class="swiper-wrapper">
+			                    <div class="swiper-slide"><img src="images/macdo.png"></div>
+			                    <div class="swiper-slide"><img src="images/burgerk.png"></div>
+			                    <div class="swiper-slide"><img src="images/subway.png"></div> 
+			                    <div class="swiper-slide"><img src="images/kfc.png"></div>
+			                    <div class="swiper-slide"><img src="images/otacos.png"></div>
+			                    <div class="swiper-slide"><img src="images/quick.png"></div>
+			                </div>
+			            </div>  
+			            <script src="js/swiper.min.js"></script>
+			            <script> 
+			                var swiper = new Swiper('.swiper-container', {
+			                    pagination: '.swiper-pagination',
+			                    slidesPerView: 4,
+			                    paginationClickable: true,
+			                    spaceBetween: 5,
+			                    freeMode: true,
+			                    loop: true,
+			                    keyboardControl: true,
+			                });
+			            </script>
+
+			         <!-- END SWIPER -->
+
+			        </div>
+	            </div>
+	        </div>
+	    </section>
+
+		<section>
+
+				<!-- THIRDBLOCK MAP -->
+
+			<div id="thirdblock">
+				<div id="map">   
+					<script>
+						    var map;
+						    function init() {
+						        // activate the map on the div#map and center id by default on a static lat/lng
+						        map = new google.maps.Map(document.getElementById('map'), {
+						            center: {lat: 48.8, lng: 2.35},
+						            zoom: 15 ,
+	                                styles : style,
+	                                scrollwheel: false,
+						        });
+						        
+						        if (navigator.geolocation) {
+						            navigator.geolocation.getCurrentPosition(function(position) {
+						                var pos = {
+						                    lat: position.coords.latitude,
+						                    lng: position.coords.longitude
+						                };
+	                                    
+	                                    getshops(position.coords.latitude,position.coords.longitude);
+
+						                map.setCenter(pos);
+						                var marker = new google.maps.Marker({
+						                    position: pos,
+						                    map: map,
+						                    title: 'Webstart !'
+						                });
+						            }, function() {
+						                // error can't get the location
+						                console.error('error can\'t get the location');
+						            });
+						        } else {
+						            // Browser doesn't support Geolocation
+						            console.error('your browser doesn\'t support Geolocation');
+						        }
+						    }
+
+						    $(document).ready(init);
+				    </script>
+		        </div>
+	        </div>
+	    </section>
+   
+		<section>  
+
+				<!-- FOURTHBLOCK FOOTER -->
+
+			<div id="fourthblock">
 				<div id="footer">
-                	<img src="images/logo.png">
+                	<img width="300em" src="images/logo.png">
 
-                <ul id="nav">
-                        
-                        <li><a href="default.asp">Contact</a></li>
-                        <li><a href="news.asp">About</a></li>
-                        <li><a href="about.asp">News</a></li>
-                        <li><a href="contact.asp">Home</a></li>
-                </ul>
-  
-            </div>
-        </div>
-        </div>
-
-        
-        
-        
-	    <div id="thirdblock">
-	    	
-	    </div>
-        
-        <div id="load">
-            <img id="painB" class="absolute" width="300px" src="IMAGES/painbot.png">
-            <img id="fromage" class="absolute" width="386px" style="margin-left:506px" src="IMAGES/fromage.png">
-            <img id="steak" class="absolute" width="300px" src="IMAGES/steak.png">
-            <img id="tomate" class="absolute" width="300px" src="IMAGES/tomate.png">
-            <img id="salade" class="absolute" width="300px" src="IMAGES/salade.png">
-            <img id="painT" class="absolute" width="300px" src="IMAGES/paintop.png">
-        </div>
+	                <ul id="nav">
+	                   	<li>
+	                   		<a href="default.asp">Contact</a>
+	                   	</li>
+	                    <li>
+	                    	<a href="news.asp">About</a>
+	                    </li>
+	                    <li>
+	                    	<a href="about.asp">News</a>
+	                    </li>
+	                    <li>
+	                    	<a href="contact.asp">Home</a>
+	                    </li>
+	                </ul>
+        		</div>
+        	</div>
+       	</section>     
 
   </body>
 </html>
