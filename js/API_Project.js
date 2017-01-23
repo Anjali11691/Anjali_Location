@@ -155,7 +155,7 @@ var style = [
 ];
 
 function getshops(lat, lng) {
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&types=food&name=fast-food&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&types=food&keyword=fast-food&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function (data) {
         for (var i=0; i<data.results.length; i++){
             var _result = data.results[i];
@@ -165,7 +165,8 @@ function getshops(lat, lng) {
                     lat : _result.geometry.location.lat,
                     lng : _result.geometry.location.lng
                 },
-                map : map
+                map : map,
+                icon : 'images/pin_medium.png'
             });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
