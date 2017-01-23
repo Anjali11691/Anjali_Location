@@ -154,30 +154,52 @@ var style = [
     }
 ]
 
-var domready = function(){
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.870627,2.366366&radius=500&types=food&name=fast-food&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+function getshops(lat,lng){
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lng+"&radius=1000&types=food&name=burger&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function(data){
        
-       
+        console.log(data);
+        
         for(var i=0; i<data.results.length; i++){
             var _result = data.results[i];
+            var infowindow = new google.maps.InfoWindow;
             var marker = new google.maps.Marker({
                 position : {
                     lat : _result.geometry.location.lat,
                     lng : _result.geometry.location.lng
                 },
                 map : map
-            })
+            }); 
+            console.log(_result.name)
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    if (_result.opening_hours.open_now==true){
+                        var ouverture = 'Ouvert';
+                    }
+                    else {
+                        var ouverture = 'Fermé';
+                    }
+                    infowindow.setContent(
+                    '<p>'+
+                    data.results[i].name+
+                    '</p></br>'+
+                    '<p>'+
+                    _result.vicinity+
+                    '<p>'+
+                    ouverture+
+                    '</p>'
+                    );
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
         }
     });
-};
+}
 
 var hideload = function(){
-    
     $("#load").fadeOut()
 }
 
-setTimeout(hideload, 3500);
+setTimeout(hideload, 0);
 
-$(document).ready(domready);
 
