@@ -169,7 +169,7 @@ function getshops(lat, lng) {
             });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
-                    if (_result.opening_hours.open_now==true){
+                    if (data.results[i].opening_hours.open_now==true){
                         var ouverture = '<font color="green">Ouvert</font>';
                     }
                     else {
@@ -188,6 +188,7 @@ function getshops(lat, lng) {
                     '<p>'+
                     ouverture+
                     '</p>'+
+                    '<img width="100%" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+data.results[i].photos[0].photo_reference+'&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU">'+
                     '</div>'
                     );
                     infowindow.open(map, marker);
