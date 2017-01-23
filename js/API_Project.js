@@ -170,10 +170,10 @@ function getshops(lat, lng) {
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
                     if (_result.opening_hours.open_now==true){
-                        var ouverture = 'Ouvert';
+                        var ouverture = '<font color="green">Ouvert</font>';
                     }
                     else {
-                        var ouverture = 'Fermé';
+                        var ouverture = '<font color="red">Fermé</font>';
                     }
                     infowindow.setContent(
                     '<div id="infoWinStyle">'+
