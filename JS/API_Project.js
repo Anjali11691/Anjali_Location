@@ -152,15 +152,12 @@ var style = [
             }
         ]
     }
-]
+];
 
-function getshops(lat,lng){
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lng+"&radius=1000&types=food&name=burger&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
-    $.get(_u, function(data){
-       
-        console.log(data);
-        
-        for(var i=0; i<data.results.length; i++){
+function getshops(lat, lng) {
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&types=food&name=fast-food&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+    $.get(_u, function (data) {
+        for (var i=0; i<data.results.length; i++){
             var _result = data.results[i];
             var infowindow = new google.maps.InfoWindow;
             var marker = new google.maps.Marker({
@@ -169,8 +166,7 @@ function getshops(lat,lng){
                     lng : _result.geometry.location.lng
                 },
                 map : map
-            }); 
-            console.log(_result.name)
+            });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
                     if (_result.opening_hours.open_now==true){
@@ -180,14 +176,19 @@ function getshops(lat,lng){
                         var ouverture = 'Fermé';
                     }
                     infowindow.setContent(
+                    '<div id="infoWinStyle">'+
+                    '<div id="topWin">'+
                     '<p>'+
                     data.results[i].name+
                     '</p></br>'+
+                    '</div>'+
                     '<p>'+
-                    _result.vicinity+
+                    data.results[i].vicinity+
+                    '</p></br>'+
                     '<p>'+
                     ouverture+
-                    '</p>'
+                    '</p>'+
+                    '</div>'
                     );
                     infowindow.open(map, marker);
                 }

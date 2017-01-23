@@ -110,3 +110,15 @@ html, body {
     top: 10em;
     left: 10em;
 }
+
+#infoWinStyle {
+    width: 200px;
+    height: 200px;
+}
+
+#topWin {
+    
+    color: lightblue;
+    font-size: 20px;
+    text-align: center;
+}
