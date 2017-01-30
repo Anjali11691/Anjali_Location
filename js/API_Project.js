@@ -153,63 +153,65 @@ var style = [
         ]
     }
 ];
-
-$("#swiper").click(function(){
-    //keyword=this.attr("id");
-    console.log("yoyoyo");
-});
     
 function getshops(lat, lng, keyword) {
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&keyword="+keyword+"&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&keyword=" + keyword + "&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function (data) {
-        for (var i=0; i<data.results.length; i++){
-            var _result = data.results[i];
-            var infowindow = new google.maps.InfoWindow;
-            var marker = new google.maps.Marker({
-                position : {
-                    lat : _result.geometry.location.lat,
-                    lng : _result.geometry.location.lng
-                },
-                map : map,
-                icon : 'images/pin_medium.png'
-            });
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                    var img = '';
-                    
-                    if (data.results[i].opening_hours.open_now==true){
-                        var ouverture = '<font color="green">Ouvert</font>';
-                    }
-                    else {
-                        var ouverture = '<font color="red">Fermé</font>';
-                    }
-                    if(data.results[i].photos){
-                        img = '<img width="100%" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+data.results[i].photos[0].photo_reference+'&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU">';
-                    }
-                    infowindow.setContent(
-                    '<div id="infoWinStyle">'+
-                    '<div id="topWin">'+
-                    '<p>'+
-                    data.results[i].name+
-                    '</p></br>'+
-                    '</div>'+
-                    '<p>'+
-                    data.results[i].vicinity+
-                    '</p></br>'+
-                    '<p>'+
-                    ouverture+
-                    '</p>'+
-                    img+
-                    '</div>'
-                    );
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-            google.maps.event.addListener(map, "click", function(event) {
-            infowindow.close();
-                });
-        }
+        populatemap(data);
     });
+}
+
+function populatemap(data){
+    for (var i=0; i<data.results.length; i++){
+        var _result = data.results[i];
+        var infowindow = new google.maps.InfoWindow;
+
+        var marker = new google.maps.Marker({
+            position : {
+                lat : _result.geometry.location.lat,
+                lng : _result.geometry.location.lng
+            },
+            map : map,
+            icon : 'images/pin_medium.png'
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                var img = '';
+
+                if (data.results[i].opening_hours && data.results[i].opening_hours.open_now){
+                    var ouverture = '<font color="green">Ouvert</font>';
+                }
+                else {
+                    var ouverture = '<font color="red">Fermé</font>';
+                }
+                if(data.results[i].photos){
+                    img = '<img width="100%" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+data.results[i].photos[0].photo_reference+'&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU">';
+                }
+                infowindow.setContent(
+                '<div id="infoWinStyle">'+
+                '<div id="topWin">'+
+                '<p>'+
+                data.results[i].name+
+                '</p></br>'+
+                '</div>'+
+                '<p>'+
+                data.results[i].vicinity+
+                '</p></br>'+
+                '<p>'+
+                ouverture+
+                '</p>'+
+                img+
+                '</div>'
+                );
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+
+        google.maps.event.addListener(map, "click", function(event) {
+            infowindow.close();
+        });
+    }
 }
 
 var hideload = function(){
@@ -217,5 +219,13 @@ var hideload = function(){
 }
 
 setTimeout(hideload, 0);
+
+$(document).ready(function(){
+    $(".swiper-slide").click(function(){
+        var keyword=this.getAttribute('id');
+        console.log(keyword);
+        getshops(pos.lat,pos.lng,keyword);
+    });
+})
 
 
