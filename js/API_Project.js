@@ -153,9 +153,20 @@ var style = [
         ]
     }
 ];
+var markers = [];
     
 function getshops(lat, lng, keyword) {
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&keyword=" + keyword + "&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+    
+    for(var i=0; i<markers.length; i++){
+        markers[i].setMap(null);
+        
+        if(i === markers.length-1){
+            markers = [];
+        }
+    }
+    
+    
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&type=food&keyword=" + keyword + "&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function (data) {
         populatemap(data);
     });
@@ -174,6 +185,8 @@ function populatemap(data){
             map : map,
             icon : 'images/pin_medium.png'
         });
+        
+        markers.push(marker);
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
@@ -221,6 +234,7 @@ var hideload = function(){
 setTimeout(hideload, 0);
 
 $(document).ready(function(){
+    
     $(".swiper-slide").click(function(){
         var keyword=this.getAttribute('id');
         console.log(keyword);
