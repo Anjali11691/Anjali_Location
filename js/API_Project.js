@@ -154,8 +154,13 @@ var style = [
     }
 ];
 
-function getshops(lat, lng) {
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&types=food&keyword=fast-food&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+$("#swiper").click(function(){
+    //keyword=this.attr("id");
+    console.log("yoyoyo");
+});
+    
+function getshops(lat, lng, keyword) {
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&keyword="+keyword+"&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function (data) {
         for (var i=0; i<data.results.length; i++){
             var _result = data.results[i];
@@ -170,11 +175,16 @@ function getshops(lat, lng) {
             });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
+                    var img = '';
+                    
                     if (data.results[i].opening_hours.open_now==true){
                         var ouverture = '<font color="green">Ouvert</font>';
                     }
                     else {
                         var ouverture = '<font color="red">Fermé</font>';
+                    }
+                    if(data.results[i].photos){
+                        img = '<img width="100%" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+data.results[i].photos[0].photo_reference+'&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU">';
                     }
                     infowindow.setContent(
                     '<div id="infoWinStyle">'+
@@ -189,12 +199,15 @@ function getshops(lat, lng) {
                     '<p>'+
                     ouverture+
                     '</p>'+
-                    '<img width="100%" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+data.results[i].photos[0].photo_reference+'&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU">'+
+                    img+
                     '</div>'
                     );
                     infowindow.open(map, marker);
                 }
             })(marker, i));
+            google.maps.event.addListener(map, "click", function(event) {
+            infowindow.close();
+                });
         }
     });
 }
