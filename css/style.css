@@ -178,3 +178,61 @@ html, body {
     -webkit-transition: width:250ms;
     transition: ease-in 250ms; 
 }
+
+/* PAGE DE PRESENTATION */
+
+#PresHeader {
+    margin-top: -270px;
+    -webkit-transform : skewY(10deg);
+    background-color: lightblue;
+    height: 400px;
+    position: relative;
+    z-index: 20;
+    
+}
+
+#PresHeader #logo {
+    position: absolute;
+    margin-top: 230px;
+    margin-left: 75%;
+    -webkit-transform : skewY(-10deg);
+    
+}
+
+#presTitle {
+    height: 300px;
+    background-color: lightcoral;
+    -webkit-transform : skewY(10deg);
+    color: white;
+    z-index: 20;
+    position: relative;
+}
+
+#presTitle #text {
+    
+    -webkit-transform : skewY(-10deg);
+    margin-left: 500px;
+    padding-top: 80px;
+    font-size: 50px;
+}
+
+#paragraph {
+    -webkit-transform : skewY(-5deg);
+    height: 600px;
+    background-color: lightgreen;
+    z-index: 1;
+    position: relative;
+    margin-top: -190px;
+}
+
+#paragraph #text {
+    -webkit-transform : skewY(5deg);
+    padding: 350px 0px 0 300px;
+    
+}
+
+#foot {
+    height: 200px;
+    background-color: lightpink;
+    margin-top: -130px;
+}
