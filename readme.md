@@ -2,11 +2,13 @@
 **API PROJECT !**
 ========================
 
-by [Brieuc CAILLOT][1], Alexandre Betourné, Julien Goullier
+by [Brieuc CAILLOT][1], Alexandre BÉTOURNÉ, Julien GOULIER, Romel NGOUMA
 ----------
 
 Informations :
 -------------
+
+Google Drive : https://drive.google.com/drive/folders/0BzxUjzqv90RMZ0RSU0RpLWZGV2c?usp=sharing
 
 > **Note:**
 
@@ -36,5 +38,4 @@ Socials :
 
 [![GitHub followers](https://img.shields.io/github/followers/espadrine.svg?style=social&label=Follow)](https://github.com/BrieucKyo)
 [![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.com/brieucclt)
-[My Website](www.brieuc.tk)
 

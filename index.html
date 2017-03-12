@@ -1,70 +1,84 @@
-<!DOCTYPE html>
+<!--==========================================================================
+#title            : JUNKGO - Accueil
+#description      : Find a fastfood near your current position
+#author           : CAILLOT Brieuc, BÉTOURNÉ Alexandre, GOULIER Julien, NGOUMA Romel
+#date             : 2017 / 13 / O3
+#version          : V1
+#usage            : HTML
+#notes            : Only working on search engine
+============================================================================-->
+
 <html>
     <head>
         <title>Accueil | Junkgo</title>
-        <meta name="viewport" content="initial-scale=1.0">
+
+        <!--META-->
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="images/logo2.png"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="description" content="Junkgo vous permet de trouver un fastfood rapidement près de votre position." />
+		<meta name="keywords" content="fastfood, rapide, google, maps'">
+
+        <!--LINK-->
+		<link rel="icon" type="image/png" href="images/homepage/logo2.png"/>
         <link href="css/homePage.css" rel="stylesheet" type="text/css">
         <link href="css/load.css" rel="stylesheet" type="text/css">
-        <link href="css/swiper.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/swiper.min.css">
-    
+        <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    	
+    	<!--SCRIPT-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        
-        
-        <script src="JS/API_Project.js"></script>
+        <script src="js/script.js"></script>
     </head>
-    <body>
-		<section>
 
-        	<!-- LOADING HAMBURGER -->
+    <body>
+
+    	<!-- LOADING HAMBURGER -->
+		<section>
+			<div id="loading">
+				<div id="loader"></div>
         	
-	        <div id="load">
-	            <img id="painB" class="absolute" width="300px" src="images/painbot.png">
-	            <img id="fromage" class="absolute" width="386px" style="margin-left:506px" src="IMAGES/fromage.png">
-	            <img id="steak" class="absolute" width="300px" src="images/steak.png">
-	            <img id="tomate" class="absolute" width="300px" src="images/tomate.png">
-	            <img id="salade" class="absolute" width="300px" src="images/salade.png">
-	            <img id="painT" class="absolute" width="300px" src="images/paintop.png">
-	        </div>
+		        <div id="load">
+		            <img id="painB" class="absolute" width="300px" src="images/homepage/painbot.png">
+		            <img id="fromage" class="absolute" width="386px" src="images/homepage/fromage.png">
+		            <img id="steak" class="absolute" width="300px" src="images/homepage/steak.png">
+		            <img id="tomate" class="absolute" width="300px" src="images/homepage/tomate.png">
+		            <img id="salade" class="absolute" width="300px" src="images/homepage/salade.png">
+		            <img id="painT" class="absolute" width="300px" src="images/homepage/paintop.png">
+		        </div>
+			</div>
+        	
         </section>
 
+		<!-- FIRSTBLOCK HEADER -->
 	    <section>
-
-	    		<!-- FIRSTBLOCK HEADER -->
-
 	    	<div id="firstblock">
 		        <div id="header">     
-		            <img id="logo" width="550px" src="images/logo.png"/>
+		            <img id="logo" width="550px" src="images/homepage/logo.png"/>
 	                <div id="download">
-	                    <img src="IMAGES/app_store.png">
-	                    <img src="IMAGES/googlePlay.png">
+	                    <img src="IMAGES/homepage/app_store.png">
+	                    <img src="IMAGES/homepage/googlePlay.png">
 	                </div>
 		        </div> 
 		    </div>
 		</section>
       	
+      	<!-- SECONDBLOCK SWIPER -->
       	<section>
-
-      			<!-- SECONDBLOCK SWIPER -->
-
 			<div id="secondblock">
 	            <div id="topMap">
 	            	 
-	            	 <!-- SWIPER -->
+	            	<!-- SWIPER -->
 
 					<div id="swiper">
 			            <div class="swiper-container swiper-container-horizontal- swiper-container-free-mode">
 			                <div class="swiper-wrapper">
-			                    <div id="mcdo" class="swiper-slide"><img src="images/macdo.png"></div>
-			                    <div id="burger king" class="swiper-slide"><img src="images/burgerk.png"></div>
-			                    <div id="subway" class="swiper-slide"><img src="images/subway.png"></div> 
-			                    <div id="fast-food+chicken+kfc" class="swiper-slide"><img src="images/kfc.png"></div>
-			                    <div id="otacos" class="swiper-slide"><img src="images/otacos.png"></div>
-			                    <div id="fast-food+burger+quick" class="swiper-slide"><img src="images/quick.png"></div>
-                                <div id="sushi-shop" class="swiper-slide"><img src="images/sushi-logo.png"></div>
+			                    <div id="mcdo" class="swiper-slide"><img src="images/homepage/macdo.png"></div>
+			                    <div id="burger king" class="swiper-slide"><img src="images/homepage/burgerk.png"></div>
+			                    <div id="subway" class="swiper-slide"><img src="images/homepage/subway.png"></div> 
+			                    <div id="fast-food+chicken+kfc" class="swiper-slide"><img src="images/homepage/kfc.png"></div>
+			                    <div id="otacos" class="swiper-slide"><img src="images/homepage/otacos.png"></div>
+			                    <div id="fast-food+burger+quick" class="swiper-slide"><img src="images/homepage/quick.png"></div>
+                                <div id="sushi-shop" class="swiper-slide"><img src="images/homepage/sushi-logo.png"></div>
 			                </div>
 			            </div>  
 			            <script src="js/swiper.min.js"></script>
@@ -80,17 +94,15 @@
 			                });
 			            </script>
 
-			         <!-- END SWIPER -->
+			        <!-- END SWIPER -->
 
 			        </div>
 	            </div>
 	        </div>
 	    </section>
 
+		<!-- THIRDBLOCK MAP -->
 		<section>
-
-				<!-- THIRDBLOCK MAP -->
-
 			<div id="thirdblock">
 				<div id="map">   
 					<script>
@@ -118,7 +130,7 @@
 						                var marker = new google.maps.Marker({
 						                    position: pos,
 						                    map: map,
-						                    icon : 'images/homme_medium.png',
+						                    icon : 'images/homepage/homme_medium.png',
 						                });
 						            }, function() {
 						                // error can't get the location
@@ -135,24 +147,22 @@
 		        </div>
 	        </div>
 	    </section>
-   
+
+   		<!-- FOURTHBLOCK FOOTER -->
 		<section>  
-
-				<!-- FOURTHBLOCK FOOTER -->
-
 			<div id="fourthblock">
 				<div id="footer">
-                	<img width="300em" src="images/logo.png">
+                	<img width="300em" src="images/homepage/logo.png">
 
 	                <ul id="nav">
 	                   	<li>
-	                   		<a href="contact.html">Contact</a>
+	                   		<a href="html/contact">Contact</a>
 	                   	</li>
 	                    <li>
-	                    	<a href="weAre.html">Qui sommes nous ?</a>
+	                    	<a href="html/weare.html">Qui sommes nous ?</a>
 	                    </li>
 	                    <li>
-	                    	<a href="contact.asp">Accueil</a>
+	                    	<a href="index.html">Accueil</a>
 	                    </li>
 	                </ul>
         		</div>

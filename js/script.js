@@ -153,6 +153,7 @@ var style = [
         ]
     }
 ];
+
 var markers = [];
     
 function getshops(lat, lng, keyword) {
@@ -183,7 +184,7 @@ function populatemap(data){
                 lng : _result.geometry.location.lng
             },
             map : map,
-            icon : 'images/pin_medium.png'
+            icon : 'images/homepage/pin_medium.png'
         });
         
         markers.push(marker);
@@ -227,19 +228,30 @@ function populatemap(data){
     }
 }
 
-var hideload = function(){
-    $("#load").fadeOut()
-}
+$(document).ready(function() {
 
-setTimeout(hideload, 3500);
+    $("body").css("overflow-y", "hidden");
 
-$(document).ready(function(){
-    
-    $(".swiper-slide").click(function(){
-        var keyword=this.getAttribute('id');
-        console.log(keyword);
-        getshops(pos.lat,pos.lng,keyword);
-    });
-})
+    var hideload = function(){
+        $("#load").fadeOut();
+        $("body").css("overflow-y", "visible");
+    };
+
+    setTimeout(hideload, 3500);
+
+    var hideloader = function(){
+        $("#loader").fadeOut();
+    };
+
+    setTimeout(hideloader, 3500);
+
+        $(".swiper-slide").click(function(){
+            var keyword=this.getAttribute('id');
+            console.log(keyword);
+            getshops(pos.lat,pos.lng,keyword);
+        });
+});
+
+
 
 

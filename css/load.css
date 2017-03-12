@@ -1,40 +1,46 @@
+/*==========================================================================
+#title            : JUNKGO - HOME PAGE LOADER
+#description      : Find a fastfood near your current position
+#author           : CAILLOT Brieuc, BÉTOURNÉ Alexandre, GOULIER Julien, NGOUMA Romel
+#date             : 2017 / 13 / O3
+#version          : V1
+#usage            : CSS
+#notes            : Only working on search engine
+============================================================================*/
+
 #load {
-    
     background-color: #fb5900;
-    z-index: 100;
+    z-index: 99;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
+    overflow-y: hidden;
 }
 
 #load #painT {
-    
     margin-top: 200px;
     -webkit-animation: painT 1s 2.5s ease-out forwards;
-}
-
-#load #salade {
-    
-    margin-top: 295px;
-    -webkit-animation: salade 1s 2s ease-out forwards;
-}
-
-#load #tomate {
-    
-    margin-top: 345px;
-    -webkit-animation: tomate 1s 1.5s ease-out forwards;
-}
-
-#load #steak {
-    
-    margin-top: 380px;
-    -webkit-animation: steak 1s 1s ease-out forwards;
 }
 
 #load #fromage {
     margin-top: 178px;
     -webkit-animation: fromage 1s 0.5s ease-out forwards;
+}
+
+#load #salade {
+    margin-top: 295px;
+    -webkit-animation: salade 1s 2s ease-out forwards;
+}
+
+#load #tomate {
+    margin-top: 345px;
+    -webkit-animation: tomate 1s 1.5s ease-out forwards;
+}
+
+#load #steak {
+    margin-top: 380px;
+    -webkit-animation: steak 1s 1s ease-out forwards;
 }
 
 #load #painB {
@@ -43,10 +49,39 @@
 }
 
 #load .absolute {
-    
     position: absolute;
-    margin-left: 550px;
+    top: 7%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     opacity: 0;
+    overflow-y: hidden;
+}
+
+#loader {
+    z-index: 100;
+    position: absolute;
+    top: 9%;
+    left: 28%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 600px;;
+    height: 600px;
+    -webkit-animation: spin 6s linear infinite;
+            animation: spin 6s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 @-webkit-keyframes painB{
@@ -54,14 +89,9 @@
     100% { margin-top: 455px;opacity: 1; }
 }
 
-@-webkit-keyframes fromage{
-    0% { margin-top: -600px;opacity: 0; }
-    100% { margin-top: 178px;opacity: 1; }
-}
-
 @-webkit-keyframes steak{
     0% { margin-top: -600px;opacity: 0; }
-    100% { margin-top: 380px;opacity: 1; }
+    100% { margin-top: 390px;opacity: 1; }
 }
 
 @-webkit-keyframes tomate{
@@ -72,6 +102,11 @@
 @-webkit-keyframes salade{
     0% { margin-top: -600px;opacity: 0; }
     100% { margin-top: 295px;opacity: 1; }
+}
+
+@-webkit-keyframes fromage{
+    0% { margin-top: -600px;opacity: 0; }
+    100% { margin-top: 193px;opacity: 1; }
 }
 
 @-webkit-keyframes painT{
