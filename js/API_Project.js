@@ -166,7 +166,7 @@ function getshops(lat, lng, keyword) {
     }
     
     
-    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1000&type=food&keyword=" + keyword + "&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
+    var _u = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=20000&type=food&keyword=" + keyword + "&key=AIzaSyA46nGujFrRxs0w9xCr0VW1_nxzdzQ6riU";
     $.get(_u, function (data) {
         populatemap(data);
     });
@@ -231,7 +231,7 @@ var hideload = function(){
     $("#load").fadeOut()
 }
 
-setTimeout(hideload, 0);
+setTimeout(hideload, 3500);
 
 $(document).ready(function(){
     
