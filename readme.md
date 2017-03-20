@@ -2,13 +2,13 @@
 **API PROJECT !**
 ========================
 
-by [Brieuc CAILLOT][1], Alexandre BÉTOURNÉ, Julien GOULIER, Romel NGOUMA
+by [Brieuc CAILLOT][1], [Alexandre BÉTOURNÉ][4], [Julien GOULIER][5], [Romel NGOUMA][6]
 ----------
 
 Informations :
 -------------
 
-Google Drive : https://drive.google.com/drive/folders/0BzxUjzqv90RMZ0RSU0RpLWZGV2c?usp=sharing
+Google Drive : https://drive.google.com/drive/folders/0BzxUjzqv90RMZHBJc29zdFVJNzg?usp=sharing
 
 > **Note:**
 
@@ -31,6 +31,9 @@ You can check them out [here][3].
   [1]: http://www.brieuc.tk
   [2]: https://github.com/BrieucKyo?tab=repositories
   [3]: https://help.github.com/articles/cloning-a-repository/
+  [4]: https://github.com/AlexandreBetourne
+  [5]: https://github.com/goullierj
+  [6]: https://github.com/fazeo
   
 Socials :
 -------------
